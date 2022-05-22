@@ -1,0 +1,90 @@
+from turtle import * # Para graficar en turtle
+import turtle
+print("===================================================================================")
+print("--------------------------------------------------------------------")
+print("| Univ.Huallpa Quino Mauricio Rodrigo                LAB9  ETN307L |")
+print("| Univ.Zambrana Morales Ana Paola                                  |")
+print("--------------------------------------------------------------------")
+print(" EJERCICIO #4 Linea\n")
+class Linea: # clase linea
+    def __init__(self,x1,y1,x2,y2): # constructor
+        self.x1=x1
+        self.x2=x2
+        self.y1=y1
+        self.y2=y2
+    def graficar(self): #metodo de graficacion
+        turtle.up()
+        turtle.goto(self.x1*10,self.y1*10)  #comandos para graficar
+        turtle.down()
+        turtle.goto((self.x1*10)+(self.x2*10),(self.y1*10)+(self.y2*10))
+        turtle.done()
+    def graficar2(self,df): #metodo para mover arriba
+        turtle.up()
+        turtle.goto(self.x1*10,(self.y1*10)+(df*10))  #comandos para graficar
+        turtle.down()
+        turtle.goto((self.x1*10)+(self.x2*10),(self.y1*10)+(self.y2*10)+(df*10))
+        turtle.done()
+    def graficar3(self,df): #metodo para mover abajo
+        turtle.up()
+        turtle.goto(self.x1*10,(self.y1*10)-(df*10))  #comandos para graficar
+        turtle.down()
+        turtle.goto((self.x1*10)+(self.x2*10),(self.y1*10)+(self.y2*10)-(df*10))
+        turtle.done()
+    def graficar4(self,df): #metodo para mover izquierda
+        turtle.up()
+        turtle.goto((self.x1*10)+(df*10),self.y1*10)  #comandos para graficar
+        turtle.down()
+        turtle.goto((self.x1*10)+(self.x2*10)+(df*10),(self.y1*10)+(self.y2*10))
+        turtle.done()
+    def graficar5(self,df): #metodo para mover derecha
+        turtle.up()
+        turtle.goto((self.x1*10)-(df*10),self.y1*10)  #comandos para graficar
+        turtle.down()
+        turtle.goto((self.x1*10)+(self.x2*10)-(df*10),(self.y1*10)+(self.y2*10))
+        turtle.done()
+    def mostrar(self):
+        print('Punto A (',self.x1,',',self.y1,') --- Punto B (',self.x2,',',self.y2,')')
+        
+print('Introducir coordenadas del Punto A :\n')
+x1=float(input('Coordenada X1 : '))
+y1=float(input('Coordenada Y1 : ')) #introducimos Puntos
+x2=float(input('Coordenada X2 : '))
+y2=float(input('Coordenada Y2 : '))
+
+print('1. Graficar')
+print('2. Mover arriba ')
+print('3. Mover abajo ')
+print('4. Mover derecha ')    # lista de operaciones
+print('5. Mover izquierda ')
+print('6. Mostrar coordenadas ')
+print('7. Salir ')
+
+while True:
+    opc=int(input('\n\nQue operacion desea hacer con la linea : '))
+    if opc in (1, 2, 3, 4, 5, 6, 7): #condicional para opcion valida
+        
+        if(opc == 7):  #para salir 
+            break  
+        
+        Objeto= Linea(x1,y1,x2,y2) #OBJETO para mencionar la clase y enviar datos
+        
+        if(opc == 1):
+            print(Objeto.graficar())  #llamamos el objeto y metodo
+        elif(opc == 2):
+            df=float(input('Cuantas unidades se desplazara arriba :'))#introducir desfase
+            print(Objeto.graficar2(df)) #llamamos el objeto y metodo
+        elif(opc == 3):
+            df=float(input('Cuantas unidades se desplazara abajo :'))#introducir desfase
+            print(Objeto.graficar3(df)) #llamamos el objeto y metodo
+        elif(opc == 4):
+            df=float(input('Cuantas unidades se desplazara a la derecha :'))#introducir desfase
+            print(Objeto.graficar4(df)) #llamamos el objeto y metodo
+        elif(opc == 5):
+            df=float(input('Cuantas unidades se desplazara a la izquierda :'))#introducir desfase
+            print(Objeto.graficar5(df)) #llamamos el objeto y metodo
+        elif(opc == 6):
+            print(Objeto.mostrar()) #llamamos el objeto y metodo
+            break
+    else:
+        print("Opcion no valida")
+print(Objeto.graficar())
