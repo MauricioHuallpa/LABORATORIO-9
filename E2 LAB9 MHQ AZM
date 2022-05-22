@@ -1,0 +1,56 @@
+print("===================================================================================")
+print("--------------------------------------------------------------------")
+print("| Univ.Huallpa Quino Mauricio Rodrigo                LAB9  ETN307L |")
+print("| Univ.Zambrana Morales Ana Paola                                  |")
+print("--------------------------------------------------------------------")
+print(" EJERCICIO #2 Numeros racionales")
+class Complejo: #definimos la clase 
+    def __init__(self,a ,b): # Metodo constructor
+        self.a = a 
+        self.b = b
+
+    def adicion(self,a,b):  #metodo adicion
+        return (a+b) 
+    
+    def sustraccion(self,a,b): #metodo sustraccion
+        return (a-b)
+        
+    def multiplicacion(self,a,b): #metodo multiplicacion
+        return (a*b)
+
+    def division(self,a,b):  #metodo division
+        return (a*b)
+
+while True: #bucle while para elegir operacion
+
+    print("1: Adicion")
+    print("2: Sustraccion")
+    print("3: Multiplicacion") # Lista de opciones
+    print("4: Division")
+    print("5: Exit")
+    
+    ch = int(input("Seleccione operacion: "))  #Introducir operacion
+    
+    if ch in (1, 2, 3, 4, 5): #condicional para opcion valida
+        
+        if(ch == 5):  #para salir 
+            break
+
+        a = float(input("Introducir Primer numero: "))
+        b = float(input("Introducir Segundo numero: "))
+        
+        #creamos el objeto
+        objeto = Complejo(a,b)
+        
+        #llamamos al objeto, y despues al metodo deseado
+        if(ch == 1):
+            print(a, "+", b, "=", objeto.adicion(a, b)) 
+        elif(ch == 2):
+            print(a, "-", b, "=", objeto.sustraccion(a, b))
+        elif(ch == 3):
+            print(a, "*", b, "=", objeto.multiplicacion(a, b))
+        elif(ch == 4):
+            print(a, "/", b, "=", objeto.division(a, b))
+    
+    else:
+        print("Opcion no valida")
