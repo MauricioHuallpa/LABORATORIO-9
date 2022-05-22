@@ -1,0 +1,57 @@
+from turtle import * # Para graficar en turtle
+import turtle
+print("===================================================================================")
+print("--------------------------------------------------------------------")
+print("| Univ.Huallpa Quino Mauricio Rodrigo                LAB9  ETN307L |")
+print("| Univ.Zambrana Morales Ana Paola                                  |")
+print("--------------------------------------------------------------------")
+print(" EJERCICIO #3 Rectangulo\n")
+
+class Rectangulo:  # clase del rectangulo
+    def __init__(self,x1,y1): # constructor
+        self.x1=x1
+        self.y1=y1
+    def area(self):    # metodo para el Area
+        area=self.y1*self.x1
+        return area
+    def perimetro(self):   #metodo para el perimetro
+        perimetro=(self.y1*2)+(self.x1*2)
+        return perimetro
+    def dibujar(self,x0,x1,y0,y1):  #metodo para dibujar desde el origen
+        turtle.goto(x1*10,y0*10)
+        turtle.goto(x1*10,y1*10)    #comandos para graficar
+        turtle.goto(x0*10,y1*10)
+        turtle.goto(x0*10,y0*10)
+        turtle.done()
+    def dibujar2(self,ejex,ejey,x1,y1):   # metodo para dibujar desde otro punto
+        turtle.up()
+        turtle.goto(ejex*10,ejey*10)  #comandos para graficar
+        turtle.down()
+        turtle.goto((x1*10)+(ejex*10),ejey*10)
+        turtle.goto((x1*10)+(ejex*10),(y1*10)+(ejey*10))
+        turtle.goto(ejex*10,(y1*10)+(ejey*10))
+        turtle.goto(ejex*10,ejey*10)
+        turtle.done()
+#saliendo de la clase        
+x0=0
+x1=float(input('Introducir Base :')) # valor de base
+y0=0
+y1=float(input('Introducir altura :')) # valor de la altura
+
+r1=Rectangulo(x1,y1) # OBJETO para la clase
+
+area=r1.area()  # llamo al objeto y el metodo de Area
+
+perimetro=r1.perimetro()  # llamo al objeto y el metodo de Perimetro
+
+print("\nEl area es:",area)
+print("El perimetro es:",perimetro) # Mostramos resultados
+mov=int(input('\n\nDesea mover el rectangulo ? 1=SI ; 2=NO  ->')) 
+while True:
+    if(mov == 1): # condicion si quiere mover el rectangulo
+        ejex=float(input('Desplazamiento horizontal : '))
+        ejey=float(input('Desplazamiento vertical : '))
+        print(r1.dibujar2(ejex,ejey,x1,y1)) #envio datos para el metodo dibujar
+    else:
+        print(r1.dibujar(x0,x1,y0,y1))  #envio datos para el metodo dibujar2
+        break
