@@ -1,0 +1,68 @@
+print("===================================================================================")
+print("--------------------------------------------------------------------")
+print("| Univ.Huallpa Quino Mauricio Rodrigo                LAB9  ETN307L |")
+print("| Univ.Zambrana Morales Ana Paola                                  |")
+print("--------------------------------------------------------------------")
+print(" EJERCICIO #5 Cuenta Bancaria\n")
+class Account(object):
+    def __init__(self,nombre,cuenta,ci,saldo):
+        self.nombre = nombre
+        self.cuenta = cuenta
+        self.ci = ci
+        self.balance = saldo
+
+    def depositar(self, monto):
+        self.balance += monto
+        print('\nUsuario : ',self.nombre)
+        print('CI : ',self.ci)
+        print('No Cuenta : 100001',self.cuenta)
+        print('Saldo Inicial : ' ,self.balance)
+
+    def retirar(self, monto):
+        self.balance -= monto
+        print('\nUsuario : ',self.nombre)
+        print('CI : ',self.ci)
+        print('No Cuenta : 100001',self.cuenta)
+        print('Saldo Inicial : ' ,self.balance)
+
+    def mostrar(self):
+        print('\nUsuario : ',self.nombre)
+        print('CI : ',self.ci)
+        print('No Cuenta : 100001',self.cuenta)
+        print('Saldo Inicial : ' ,self.balance)
+        
+
+nombre= input('Introducir Nombre del Usuario : ')
+cuenta= int(input('Introducir Digitos finales de la cuenta : 100001'))
+ci= int(input('Introducir numero de carnet de Identidad : '))
+saldo= int(input('Introducir Cantidad Inicial : '))
+
+print('Que desea hacer con su cuenta ?')
+print('1. Depositar ')
+print('2. retirar ')
+print('3. Mostrar cuenta ')
+print('4. Salir ')
+
+while True:
+    opc=int(input('\n\nIntroducir eleccion : '))
+    if opc in (1, 2, 3, 4): #condicional para opcion valida
+    
+        if(opc == 4):  #para salir 
+            break  
+    
+        a1 = Account(nombre,cuenta,ci,saldo) #OBJETO para mencionar la clase y enviar datos
+    
+        if(opc == 1):
+            monto=float(input('Introducir monto a depositar : ')) #llamamos el objeto y metodo
+            a1.depositar(monto)
+    
+        elif(opc == 2):
+            monto=float(input('Introducir monto a retirar : ')) #introducir desfase
+            a1.retirar(monto) #llamamos el objeto y metodo
+            
+        elif(opc == 3):
+            a1.mostrar()
+
+    else:
+        print("Opcion no valida")
+    
