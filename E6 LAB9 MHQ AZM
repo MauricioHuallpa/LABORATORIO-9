@@ -1,0 +1,110 @@
+print("===================================================================================")
+print("--------------------------------------------------------------------")
+print("| Univ.Huallpa Quino Mauricio Rodrigo                LAB9  ETN307L |")
+print("| Univ.Zambrana Morales Ana Paola                                  |")
+print("--------------------------------------------------------------------")
+print(" EJERCICIO#9 Ejemplos Varios\n")
+
+
+class Motor:
+    def __init__(self):
+        self.encendido= False
+    def encender_motor(self):
+        self.encendido= True
+
+objeto = Motor() #objeto para la clase
+
+print('el motor esta encendido ? .......R:',objeto.encendido) 
+
+objeto.encender_motor()
+print('el motor esta encendido ? .......R:',objeto.encendido)
+    
+
+
+'''
+class Rueda:
+    def __init__(self):
+        self.inflado= False
+    def inflar_rueda(self):
+        self.inflado= True
+    def desinflar_rueda(self):
+        self.inflado= False
+
+objeto = Rueda() #objeto para la clase
+
+print('La rueda esta inflada ? .......R:',objeto.inflado) #solo 
+
+#objeto.inflar_rueda()
+#print('La rueda esta inflada ? .......R:',objeto.inflado)
+
+#objeto.desinflar_rueda()
+#print('La rueda esta inflada ? .......R:',objeto.inflado)
+'''
+'''
+class Ventana:
+    def __init__(self):
+        self.cerrada= True
+    def abrir_ventana(self):
+        self.cerrada= False
+    def cerrar_ventana(self):
+        self.cerrada= True
+
+objeto = Ventana() #objeto para la clase
+
+print('La ventana esta cerrada ? .......R:',objeto.cerrada) 
+
+#objeto.abrir_ventana()
+#print('La ventana esta cerrada ? .......R:',objeto.cerrada)
+
+#objeto.cerrar_ventana()
+#print('La ventana esta cerrada ? .......R:',objeto.cerrada)
+'''
+'''
+class Puerta:
+    def __init__(self):
+        self.cerrada= True
+    def abrir_puerta(self):
+        self.cerrada= False
+    def cerrar_puerta(self):
+        self.cerrada= True
+
+objeto = Puerta() #objeto para la clase
+
+print('La ventana esta cerrada ? .......R:',objeto.cerrada) 
+
+#objeto.abrir_puerta()
+#print('La ventana esta cerrada ? .......R:',objeto.cerrada)
+
+#objeto.cerrar_puerta()
+#print('La ventana esta cerrada ? .......R:',objeto.cerrada)
+'''
+'''
+class Coche: 
+    ruedas = 4    #atributos
+    puertas = 2
+    motor = 1
+
+    def __init__(self, color, marca, modelo): #constructor
+        self.color = color
+        self.marca = marca
+        self.modelo = modelo
+    # method 1
+    def mostrar_descripcion(self):
+        return 'Su auto color {} es de la marca {} ,modelo del {}'.format(self.color,self.marca,self.modelo)
+    # method 2
+    def cambiar_color(self, color):
+        self.color = color
+
+color=input('Introdusca color del vehiculo :')
+marca=input('Introdusca marca del vehiculo :')
+modelo=input('Introdusca año del vehiculo :')
+
+objeto = Coche(color,marca,modelo)
+# llmamos al metodo 1
+print(objeto.mostrar_descripcion()) #llamamos al metodo para mostrar
+
+# llamamos al metodo para cambiar el color
+#objeto.cambiar_color('Blanco')
+#print(objeto.mostrar_descripcion())
+# llammos al metodo mostrar datos actualizados
+'''
